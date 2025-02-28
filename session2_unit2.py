@@ -1,4 +1,5 @@
 from collections import Counter, defaultdict
+from itertools import combinations
 
 
 def find_balanced_subsequence(art_pieces):
@@ -91,5 +92,26 @@ cpdomains1 = ["9001 modern.artmuseum.com"]
 cpdomains2 = ["900 abstract.gallery.com", "50 impressionism.com", 
               "1 contemporary.gallery.com", "5 medieval.org"]
 
-print(subdomain_visits(cpdomains1))
-print(subdomain_visits(cpdomains2))
+# print(subdomain_visits(cpdomains1))
+# print(subdomain_visits(cpdomains2))
+
+def beauty_sum(collection):
+  total_beauty = 0
+  # collection = "aabcb"
+  
+  for i in range(len(collection)):
+    # i = 0
+    # i = 1
+    b_dict = Counter()
+    for r in range(i, len(collection)):
+      # r = 0, 1, 2, 3, 4
+      # r = 1, 2, 3, 4
+      char = collection[r]
+      b_dict[char] += 1
+      sub_sum = max(b_dict.values()) - min(b_dict.values())
+      total_beauty += sub_sum
+      
+    return total_beauty 
+
+print(beauty_sum("aabcb")) 
+print(beauty_sum("aabcbaa"))
