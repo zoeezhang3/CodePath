@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
 
 def find_balanced_subsequence(art_pieces):
@@ -64,5 +64,32 @@ def organize_exhibition(collection):
 collection1 = ["O'Keefe", "Kahlo", "Picasso", "O'Keefe", "Warhol", "Kahlo", "O'Keefe"]
 collection2 = ["Kusama", "Monet", "Ofili", "Banksy"]
 
-print(organize_exhibition(collection1))
-print(organize_exhibition(collection2))
+# print(organize_exhibition(collection1))
+# print(organize_exhibition(collection2))
+
+
+# Problem 4: Gallery Subdomain Traffic
+def subdomain_visits(cpdomains):
+  visit_counts = defaultdict(int)
+  
+  for item in cpdomains:
+    arr = item.split(' ')
+    count = int(arr[0])
+    domains = arr[1].split(".")
+    
+    for i in range(len(domains)):
+      subdomain = ".".join(domains[i:])
+      visit_counts[subdomain] += count
+      
+  result = []
+  for key, val in visit_counts.items():
+    item = [val, key]
+    result.append(item)
+  return result  
+
+cpdomains1 = ["9001 modern.artmuseum.com"]
+cpdomains2 = ["900 abstract.gallery.com", "50 impressionism.com", 
+              "1 contemporary.gallery.com", "5 medieval.org"]
+
+print(subdomain_visits(cpdomains1))
+print(subdomain_visits(cpdomains2))
