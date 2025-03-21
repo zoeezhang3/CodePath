@@ -142,25 +142,72 @@ from collections import Counter
 # print(find_best_fabric_pair(fabrics_2, 70))
 # print(find_best_fabric_pair(fabrics_3, 60))
 
-# problem 5
-def organize_fabrics(fabrics):
-  fabrics.sort(key=lambda x: x[1])
-  stack = []
+# # problem 5
+# def organize_fabrics(fabrics):
+#   fabrics.sort(key=lambda x: x[1])
+#   stack = []
   
-  for fabric in fabrics:
-    stack.append(fabric[0])
+#   for fabric in fabrics:
+#     stack.append(fabric[0])
   
-  res = []
-  while stack:
-    res.append(stack.pop())
+#   res = []
+#   while stack:
+#     res.append(stack.pop())
     
-  return res
+#   return res
   
 
-fabrics = [("Organic Cotton", 8), ("Recycled Polyester", 6), ("Bamboo", 7), ("Hemp", 9)]
-fabrics_2 = [("Linen", 5), ("Recycled Wool", 9), ("Tencel", 7), ("Organic Cotton", 6)]
-fabrics_3 = [("Linen", 4), ("Hemp", 8), ("Recycled Polyester", 5), ("Bamboo", 7)]
+# fabrics = [("Organic Cotton", 8), ("Recycled Polyester", 6), ("Bamboo", 7), ("Hemp", 9)]
+# fabrics_2 = [("Linen", 5), ("Recycled Wool", 9), ("Tencel", 7), ("Organic Cotton", 6)]
+# fabrics_3 = [("Linen", 4), ("Hemp", 8), ("Recycled Polyester", 5), ("Bamboo", 7)]
 
-print(organize_fabrics(fabrics))
-print(organize_fabrics(fabrics_2))
-print(organize_fabrics(fabrics_3))
+# print(organize_fabrics(fabrics))
+# print(organize_fabrics(fabrics_2))
+# print(organize_fabrics(fabrics_3))
+
+#  problem 6
+# def process_supplies(supplies):
+#   supplies.sort(key=lambda x: x[1])
+#   stack = []
+  
+#   for supplie in supplies:
+#     stack.append(supplie[0])
+  
+#   res = []
+#   while stack:
+#     res.append(stack.pop())
+    
+#   return res
+  
+
+# supplies = [("Organic Cotton", 3), ("Recycled Polyester", 2), ("Bamboo", 4), ("Hemp", 1)]
+# supplies_2 = [("Linen", 2), ("Recycled Wool", 5), ("Tencel", 3), ("Organic Cotton", 4)]
+# supplies_3 = [("Linen", 3), ("Hemp", 2), ("Recycled Polyester", 5), ("Bamboo", 1)]
+
+# print(process_supplies(supplies))
+# print(process_supplies(supplies_2))
+# print(process_supplies(supplies_3))
+
+#  problem 7
+
+# def calculate_fabric_waste(items, fabric_rolls):
+#   sum_waste = 0
+#   for index, quantity in enumerate(fabric_rolls):
+#     item_name, required_quantity = items[index]
+#     sum_waste += quantity - required_quantity 
+  
+#   return sum_waste
+  
+
+# items = [("T-Shirt", 2), ("Pants", 3), ("Jacket", 5)]
+# fabric_rolls_1 = [5, 5, 5]
+
+# items_2 = [("Dress", 4), ("Skirt", 3), ("Blouse", 2)]
+# fabric_rolls_2 = [4, 4, 4]
+
+# items_3 = [("Jacket", 6), ("Shirt", 2), ("Shorts", 3)]
+# fabric_rolls_3 = [7, 5, 5]
+
+# print(calculate_fabric_waste(items, fabric_rolls_1))
+# print(calculate_fabric_waste(items_2, fabric_rolls_2))
+# print(calculate_fabric_waste(items_3, fabric_rolls_3))
